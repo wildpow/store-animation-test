@@ -14,7 +14,33 @@ export default function Home() {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <LazyMotion features={domMax}>
-          <m.div className={styles.hero} layoutId="image" layout>
+          <m.div
+            className={`${styles.hero} hover:shadow-2xl transition-all mt-7 relative grid`}
+            layoutId="current-hero"
+            layout
+            style={{ display: "grid" }}
+          >
+            <div
+              style={{ gridArea: "1/1" }}
+              className="relative z-10 flex flex-col justify-center max-w-2xl p-5 text-2xl text-gray-50 place-items-start xl:p-20 "
+            >
+              <div className="p-6 bg-gray-500 rounded bg-opacity-60">
+                <m.div layout layoutId="current-title">
+                  <h2 className="mb-4 text-3xl">Current Sale</h2>
+                </m.div>
+                <p className="mb-4 text-xl">
+                  There are many variations of passages of Lorem Ipsum
+                  available, but the majority have suffered alteration in some
+                  form, by injected humour, or randomised words which don't look
+                  even slightly believable.
+                </p>
+                {/* <Link href="/current-sale">
+                  <div className="p-4 text-xl uppercase bg-blue-300 rounded-md shadow-md">
+                    Shop Current Sale
+                  </div>
+                </Link> */}
+              </div>
+            </div>
             <Link href="/current-sale">
               <Image
                 src="/assets/img2.jpeg"
