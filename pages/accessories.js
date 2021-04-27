@@ -3,5 +3,5 @@ export default function Accessories() {
     <section>
       <h2>Accessories</h2>
     </section>
-  )
+  );
 }
