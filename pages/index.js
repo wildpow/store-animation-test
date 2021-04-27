@@ -1,33 +1,34 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import { motion } from "framer-motion";
+import { m,LazyMotion, domMax } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-
+import Layout from '../components/layout'
 export default function Home() {
   return (
-    <div className={styles.container}>
+    <Layout>
+    <section className={styles.home__root}>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <nav className={styles.nav}>
-      <Link href="/features" passHref>go</Link>
-        nav
-      </nav>
-      <main className={styles.main}>
-      <div className={styles.hero}>
+      <LazyMotion features={domMax}>
+
+      <m.div className={styles.hero} layoutId="image" layout>
+      <Link href="/current-sale">
       <Image 
                 src="/assets/img2.jpeg"
-                
+                loading='eager'
                 layout="fill"
         objectFit="cover"
               />
-      </div>
+      </Link>
+      </m.div>
+      </LazyMotion>
     <div className={styles.img1}>
     <Image
                 src="/assets/img1.jpeg"
-                      
+                loading='eager'
                 layout="fill"
         objectFit="cover"
               />
@@ -35,7 +36,7 @@ export default function Home() {
     <div className={styles.img2}>
     <Image
                 src="/assets/img3.jpeg"
-                       
+                loading='eager'
                 layout="fill"
         objectFit="cover"
               />
@@ -43,17 +44,16 @@ export default function Home() {
     <div className={styles.img3}>
     <Image
                 src="/assets/img4.jpeg"
-                        
+                loading='eager'
                 layout="fill"
         objectFit="cover"
               />
     </div>
   
-      </main>
 
-      <footer className={styles.footer}>
-      footer
-      </footer>
-    </div>
+
+    
+    </section>
+    </Layout>
   )
 }

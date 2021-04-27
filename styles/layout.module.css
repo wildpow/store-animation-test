@@ -1,0 +1,5 @@
+.layout__root {
+  grid-template-rows: 60px 1fr 250px;
+  margin: 0 auto;
+  max-width: 1530px;
+}
