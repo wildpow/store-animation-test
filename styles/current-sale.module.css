@@ -1,7 +1,9 @@
 .currentSale__root {
   display: grid;
+  padding-top: 50px;
+  grid-row-gap: 20px;
   grid-template-columns: 1f;
-  grid-template-rows: 400px 1fr;
+  grid-template-rows: 300px 1fr;
   grid-template-areas:
     "header"
     "main";
